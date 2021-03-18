@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import Markdown from './Markdown';
+import Markdown from './Markdown/Markdown';
 
 const useStyles = makeStyles((theme) => ({
   markdown: {
@@ -17,7 +17,7 @@ interface MainProps {
   title: string;
 }
 
-export default function Main(props: MainProps) {
+const Main = (props: MainProps): JSX.Element => {
   const classes = useStyles();
   const { posts, title } = props;
 
@@ -34,4 +34,5 @@ export default function Main(props: MainProps) {
       ))}
     </Grid>
   );
-}
+};
+export default Main;

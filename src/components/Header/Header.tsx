@@ -4,7 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
-import sections from '../static/sections';
+import sections from '../../static/sections';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {

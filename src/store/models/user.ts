@@ -20,11 +20,12 @@ export const deleteUserAction = () => {
 
 type UserActionType = ReturnType<typeof updateUserAction> | ReturnType<typeof deleteUserAction>;
 
-const initialState = {
+const initialState: UserType = {
   id: '',
   name: '',
 };
-const reducer = (state: UserType = initialState, action: UserActionType) => {
+
+const reducer = (state: UserType = initialState, action: UserActionType): UserType => {
   switch (action.type) {
     case UPDATE_USER:
       return {

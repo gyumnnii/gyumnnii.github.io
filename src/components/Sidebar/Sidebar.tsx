@@ -28,7 +28,7 @@ interface SidebarProps {
   title: string;
 }
 
-export default function Sidebar(props: SidebarProps) {
+const Sidebar = (props: SidebarProps): JSX.Element => {
   const classes = useStyles();
   const { archives, description, social, title } = props;
 
@@ -63,4 +63,5 @@ export default function Sidebar(props: SidebarProps) {
       ))}
     </Grid>
   );
-}
+};
+export default Sidebar;

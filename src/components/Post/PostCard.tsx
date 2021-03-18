@@ -30,7 +30,7 @@ interface FeaturedPostProps {
   };
 }
 
-export default function FeaturedPost(props: FeaturedPostProps) {
+const PostCard = (props: FeaturedPostProps): JSX.Element => {
   const classes = useStyles();
   const { post } = props;
 
@@ -50,7 +50,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
                 {post.description}
               </Typography>
               <Typography variant="subtitle1" color="primary">
-                Continue reading...
+                more...
               </Typography>
             </CardContent>
           </div>
@@ -61,4 +61,5 @@ export default function FeaturedPost(props: FeaturedPostProps) {
       </CardActionArea>
     </Grid>
   );
-}
+};
+export default PostCard;
