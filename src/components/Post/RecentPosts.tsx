@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import FeaturedPost from './FeaturedPost';
+import PostCard from './PostCard';
 
 const featuredPosts = [
   {
@@ -27,7 +27,7 @@ const RecentPosts = (): JSX.Element => {
       </div>
       <Grid container spacing={4}>
         {featuredPosts.map((post) => (
-          <FeaturedPost key={post.title} post={post} />
+          <PostCard key={post.title} post={post} />
         ))}
       </Grid>
     </>

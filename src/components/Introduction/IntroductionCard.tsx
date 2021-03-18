@@ -30,32 +30,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const introduction = {
+const introductionData = {
   title: 'gyumnnii.io 블로그',
   description: '간단한 소개글\n줄바꿈하면서 잘 넣도록\n세줄 정도로 정리해서 넣자',
   image: 'https://source.unsplash.com/random',
   imageText: 'main image description',
 };
 
-const MainIntroduction = (): JSX.Element => {
+const IntroductionCard = (): JSX.Element => {
   const classes = useStyles();
 
   return (
     <Paper
       className={classes.mainIntroduction}
-      style={{ backgroundImage: `url(${introduction.image})` }}
+      style={{ backgroundImage: `url(${introductionData.image})` }}
     >
       {/* Increase the priority of the hero background image */}
-      <img style={{ display: 'none' }} src={introduction.image} alt={introduction.imageText} />
+      <img
+        style={{ display: 'none' }}
+        src={introductionData.image}
+        alt={introductionData.imageText}
+      />
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>
           <div className={classes.mainFeaturedPostContent}>
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-              {introduction.title}
+              {introductionData.title}
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              {introduction.description}
+              {introductionData.description}
             </Typography>
           </div>
         </Grid>
@@ -63,4 +67,4 @@ const MainIntroduction = (): JSX.Element => {
     </Paper>
   );
 };
-export default MainIntroduction;
+export default IntroductionCard;

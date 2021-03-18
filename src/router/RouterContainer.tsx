@@ -9,7 +9,7 @@ import Home from '../pages/Home';
 import Info from '../pages/Info';
 import Develop from '../pages/Develop';
 import Favorite from '../pages/Favorite';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 
 const store = createStore(rootReducer);
 

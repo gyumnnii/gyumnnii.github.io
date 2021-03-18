@@ -30,7 +30,7 @@ interface FeaturedPostProps {
   };
 }
 
-const FeaturedPost = (props: FeaturedPostProps): JSX.Element => {
+const PostCard = (props: FeaturedPostProps): JSX.Element => {
   const classes = useStyles();
   const { post } = props;
 
@@ -62,4 +62,4 @@ const FeaturedPost = (props: FeaturedPostProps): JSX.Element => {
     </Grid>
   );
 };
-export default FeaturedPost;
+export default PostCard;
