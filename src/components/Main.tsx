@@ -17,7 +17,7 @@ interface MainProps {
   title: string;
 }
 
-export default function Main(props: MainProps) {
+const Main = (props: MainProps): JSX.Element => {
   const classes = useStyles();
   const { posts, title } = props;
 
@@ -34,4 +34,5 @@ export default function Main(props: MainProps) {
       ))}
     </Grid>
   );
-}
+};
+export default Main;

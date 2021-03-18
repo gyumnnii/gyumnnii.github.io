@@ -30,7 +30,7 @@ interface FeaturedPostProps {
   };
 }
 
-export default function FeaturedPost(props: FeaturedPostProps) {
+const FeaturedPost = (props: FeaturedPostProps): JSX.Element => {
   const classes = useStyles();
   const { post } = props;
 
@@ -61,4 +61,5 @@ export default function FeaturedPost(props: FeaturedPostProps) {
       </CardActionArea>
     </Grid>
   );
-}
+};
+export default FeaturedPost;
