@@ -1,12 +1,8 @@
-import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import React from 'react';
+import { Grid, Link, makeStyles, Paper, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  mainFeaturedPost: {
+  mainIntroduction: {
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
@@ -34,40 +30,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface MainFeaturedPostProps {
-  post: {
-    description: string;
-    image: string;
-    imageText: string;
-    linkText: string;
-    title: string;
-  };
-}
+const introduction = {
+  title: 'gyumnnii.io 블로그',
+  description: '간단한 소개글\n줄바꿈하면서 잘 넣도록\n세줄 정도로 정리해서 넣자',
+  image: 'https://source.unsplash.com/random',
+  imageText: 'main image description',
+};
 
-export default function MainFeaturedPost(props: MainFeaturedPostProps) {
+const MainIntroduction = (): JSX.Element => {
   const classes = useStyles();
-  const { post } = props;
 
   return (
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
+    <Paper
+      className={classes.mainIntroduction}
+      style={{ backgroundImage: `url(${introduction.image})` }}
+    >
       {/* Increase the priority of the hero background image */}
-      <img style={{ display: 'none' }} src={post.image} alt={post.imageText} />
+      <img style={{ display: 'none' }} src={introduction.image} alt={introduction.imageText} />
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>
           <div className={classes.mainFeaturedPostContent}>
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-              {post.title}
+              {introduction.title}
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
+              {introduction.description}
             </Typography>
-            <Link variant="subtitle1" href="https://www.naver.com">
-              {post.linkText}
-            </Link>
           </div>
         </Grid>
       </Grid>
     </Paper>
   );
-}
+};
+export default MainIntroduction;

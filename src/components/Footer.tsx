@@ -3,47 +3,56 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import { Grid } from '@material-ui/core';
+import { GitHub, Instagram, Mail } from '@material-ui/icons';
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        gyumnnii.io
       </Link>{' '}
       {new Date().getFullYear()}.
     </Typography>
   );
-}
+};
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.background.paper,
-    // marginTop: theme.spacing(8),
+    backgroundColor: 'lightgray',
+    marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   },
 }));
 
-interface FooterProps {
-  description: string;
-  title: string;
-}
+const contactUrl = {
+  mail: 'mailto::gogumasei@gmail.com',
+  github: 'https://github.com/gyumnnii',
+  instagram: 'https://www.instagram.com/choii96_825/',
+};
 
-export default function Footer(props: FooterProps) {
+const Footer = (): JSX.Element => {
   const classes = useStyles();
-  const { description, title } = props;
-
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
-          {title}
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          {description}
-        </Typography>
+        <Grid container spacing={4} justify="center">
+          <Grid item xs={1}>
+            <Mail />
+          </Grid>
+          <Grid item xs={1}>
+            <GitHub />
+          </Grid>
+          <Grid item xs={1}>
+            <Instagram />
+          </Grid>
+        </Grid>
         <Copyright />
       </Container>
     </footer>
   );
-}
+};
+export default Footer;
