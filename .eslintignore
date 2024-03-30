@@ -1,0 +1,12 @@
+/@types
+/dist
+node_modules/*
+.eslintrc.cjs
+yarn.lock
+pnpm-lock.yaml
+*.html
+*.css
+*.scss
+*.svg
+*.json
+*.md
