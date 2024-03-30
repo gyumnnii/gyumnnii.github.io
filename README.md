@@ -1,34 +1,31 @@
-## Usage
+# gyumnnii 개인 개발 블로그
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+# 기술 스택
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+- solid.js
+- node.js (^18)
 
-```bash
-$ npm install # or pnpm install or yarn install
+# 시작하기
+
+pnpm 을 기본으로 사용합니다.
+
+```sh
+> pnpm install
+> pnpm start
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+# 디렉토리 구조
 
-## Available Scripts
+```
+- index.tsx : 엔트리 포인트
+- routes : 라우터
+- pages : 화면 단위 컴포넌트
+- component : 기능 단위 컴포넌트
+- hooks: 공통 훅
+- helpers: 공통 헬퍼 함수
+- constants: 공통 상수
+- api: 공통 API 호출 함수
 
-In the project directory, you can run:
-
-### `npm run dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+특정 컴포넌트에서만 사용되는 hooks, helpers, constants 는 해당 컴포넌트 디렉토리 내부에 유지
+컴포넌트의 css 파일도 해당 컴포넌트 디렉토리 내부에 유지
+```
